@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <input id="thu1" type="number" max="12" min="1" />
+    <input type="button" value="Tính số ngày " onclick="songay1()"/> <br><br>
+    <p id="ketqua1"></p>
+    <p> và </p><br>
+    <input id="thu2" type="number" max="12" min="1" />
+    <input type="button" value="Tính số ngày" onclick="songay2()"/><br>
+    <p id="ketqua2"></p>
+<script>
+    function songay1(){
+        const thu1=document.getElementById("thu1").value;
+        var kq;
+        switch  (thu1) {
+            case '1':
+            case '3':
+            case '5':
+            case '7':
+            case '8':
+            case '10':
+            case '12':
+                kq="có 31 ngày ";
+                break;
+            case '2':
+                kq="có 28 hoặc 29 ngày";
+                break;
+            case '4':
+            case '6':
+            case '9':
+            case '11':
+                kq="có 30 ngày ";
+                break;
+        }
+        document.getElementById("ketqua1").innerHTML=kq;
+    }
+    function songay2(){
+        const thu2=document.getElementById("thu2").value;
+        var kq;
+        switch  (thu2) {
+            case '1':
+            case '3':
+            case '5':
+            case '7':
+            case '8':
+            case '10':
+            case '12':
+                kq="có 31 ngày ";
+                break;
+            case '2':
+                kq="có 28 hoặc 29 ngày";
+                break;
+            case '4':
+            case '6':
+            case '9':
+            case '11':
+                kq="có 30 ngày ";
+                break;
+        }
+        document.getElementById("ketqua2").innerHTML=kq;
+    }
+
+</script>
+
+</body>
+</html>
