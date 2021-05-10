@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Bài 10: Viết chương trình tính giá điện.
+    // TT	     Số kWh sử dụng	        Giá bán điện (đồng/kWh)
+    // Bậc 1	Cho kWh từ 0 - 50	       1.678
+    // Bậc 2	Cho kWh từ 51 - 100	       1.734
+    // Bậc 3	Cho kWh từ 101 - 200	   2.014
+    // Bậc 4	Cho kWh từ 201 - 300	   2.536
+    // Bậc 5	Cho kWh từ 301 - 400	   2.834
+    // Bậc 6	Cho kWh từ 401 trở lên	   2.927
+    let kmh =prompt("nhập số kwh đã sử dụng (lớn hớn 0)");
+    let tiendien;
+    if (kmh>400){
+        tiendien=(kmh-400)*2.927+2.834*300+2.536*200+2.014*100+1.734*50+1.678*50;
+        document.write("Tiền điện phải trả là " + tiendien);
+    }else if (kmh>300){
+        tiendien=(kmh-300)*2.834+2.536*200+2.014*100+1.734*50+1.678*50;
+        document.write("Tiền điện phải trả là " + tiendien);
+    }else if (kmh>200){
+        tiendien=(kmh-200)*2.536+2.014*100+1.734*50+1.678*50;
+        document.write("Tiền điện phải trả là " + tiendien);
+    }else if (kmh>100){
+        tiendien=(kmh-100)*2.014+1.734*50+1.678*50;
+        document.write("Tiền điện phải trả là " + tiendien);
+    }else if (kmh>50){
+        tiendien=(kmh-50)*1.734+1.678*50;
+        document.write("Tiền điện phải trả là " + tiendien);
+    }else if (kmh<50){
+        tiendien=(50-kmh)* 1.678;
+        document.write("Tiền điện phải trả là " + tiendien);
+    }
+
+</script>
+
+</body>
+</html>

@@ -17,7 +17,7 @@
 
     let a =prompt("nhập tham số a");
     let b =prompt("nhập tham số b");
-    // let x;
+    let x;
     if (a ==0 ){
         if (b==0){
             alert("phương trình có vô số nghiệm.");
@@ -25,7 +25,9 @@
             alert("phương trình vô nghiệm.")
         }
     }else {
-        alert("phương trình có nghiệm duy nhất x=-b/a" );
+        x =-b/a
+        document.write("phương trình có nghiệm duy nhất là x= " + x )
+        // alert("phương trình có nghiệm duy nhất x=-b/a" );
     }
 
 

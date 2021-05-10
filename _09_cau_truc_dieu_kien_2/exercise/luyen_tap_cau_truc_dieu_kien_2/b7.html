@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Giải phương trình bậc 2: ax2 + bx + c = 0
+    // Chúng ta nhớ lại kiến thức về giải phương trình bậc 2 với a ≠ 0 như sau:
+    //
+    //     B1: Tính delta: Δ = b^2 – 4ac
+    // B2: Kiểm tra delta cho từng trường hợp từ dễ đến khó
+    // TH1: Δ < 0 => Phương trình vô nghiệm.
+    //     TH2: Δ = 0 => Phương trình có nghiệm kép x = -b/2a
+    // TH3: Δ > 0 => Phương trình có 2 nghiệm x1 = (-b+Math.sqrt(delta))/2a
+    //                                        x2 = (-b-Math.sqrt(delta))/2a
+
+    let a =prompt("nhập a");
+    let b =prompt("nhập b");
+    let c =prompt("nhập c");
+    let x ;
+    delta =b*b -4*a*c ;
+    if (a!=0){
+        if (delta<0){
+            alert("phương trình vô nghiệm");
+        }else if (delta==0){
+            x =-b/(2*a);
+            document.write(" Phương trình có nghiệm kép là x = " +x);
+        }else if (delta>0){
+            x1 = (-b+Math.sqrt(delta))/(2*a);
+            x2 = (-b-Math.sqrt(delta))/(2*a);
+            document.write("Phương trình có 2 nghiệm x1= " +x1 );
+            document.write(" , x2= " +x2 );
+        }
+
+    }else {
+        alert("không phải phương trình bậc 2");
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Bài 12: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lãi con)
+    // khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng.
+    let tienvay =prompt("nhập số tiền bạn muốn vay ngân hàng");
+    let n = prompt("số tháng cho vay") ;
+    let i =prompt("lãi suất hàng tháng (vd: 0.7;0,9...)");
+    let lai;
+    lai=(tienvay*Math.pow(Number(1+i/100),Number(n)))-tienvay;
+    document.write("Lãi ngân hàng sau n tháng là "+ lai);
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Bài 11: Viết chương trình tính thuế thu nhập cá nhân.
+    // Bậc 1: 4 triệu đồng/tháng 0%;
+    // Bậc 2: Trên 4 - 7 triệu đồng/tháng: 5%;
+    // Bậc 3: Trên 7 - 12 triệu đồng: 10%;
+    // Bậc 4: Trên 12 - 20triệu đồng/tháng: 15%;
+    // Bậc 5: Trên 20 - 44 triệu đồng/tháng: 20%;
+    // Bậc 6: Trên 44 - 84 triệu đồng/tháng: 25%;
+    // Bậc 7: Trên 84 triệu đồng: 30%.
+    // giảm trừ gia cảnh cho bản thân là 4 triệu đồng/tháng
+    // cứ 1 người được tính là người phụ thuộc bạn thì được giảm trừ 1,6 triệu đồng/tháng
+    let luong =prompt("nhập mức lương của bạn");
+    let sn =parseInt(prompt("nhập số người được tính là người phụ thuộc bạn"))
+    let mucgiam = 4000000 + sn*1600000;
+    let thue ;
+    if (mucgiam>=luong){
+        alert("bạn không phải nộp thuế");
+    }else if (luong>84000000){
+        thue=(luong-84000000)*30/100+(84000000-44000000)*25/100+(44000000-20000000)*20/100+(20000000-12000000)*15/100+(12000000-7000000)*10/100+(7000000-4000000)*5/100;
+        document.write("Số thuế bạn phải nộp là "+ thue);
+    }else if (luong>44000000){
+        thue=(luong-44000000)*25/100+(44000000-20000000)*20/100+(20000000-12000000)*15/100+(12000000-7000000)*10/100+(7000000-4000000)*5/100;
+        document.write("Số thuế bạn phải nộp là "+ thue);
+    }else if (luong>20000000){
+        thue=(luong-20000000)*20/100+(20000000-12000000)*15/100+(12000000-7000000)*10/100+(7000000-4000000)*5/100;
+        document.write("Số thuế bạn phải nộp là "+ thue);
+    }else if (luong>12000000){
+        thue=(luong-12000000)*15/100+(12000000-7000000)*10/100+(7000000-4000000)*5/100;
+        document.write("Số thuế bạn phải nộp là "+ thue);
+    }else if (luong>7000000){
+        thue=(luong-7000000)*10/100+(7000000-4000000)*5/100;
+        document.write("Số thuế bạn phải nộp là "+ thue);
+    }else if (luong>4000000){
+        thue=(luong-4000000)*5/100;
+        document.write("Số thuế bạn phải nộp là "+ thue);
+    }else {
+        alert("bạn không phải nộp thuế");
+    }
+
+
+
+
+</script>
+
+</body>
+</html>
