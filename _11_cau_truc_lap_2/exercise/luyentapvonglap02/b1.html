@@ -6,16 +6,16 @@
 </head>
 <body>
 <script>
-    // Hiển thị ra 20 số trong dãy fibonacci đầu tiên.
+    // In dãy Finonaci tương ứng với số lượng người dùng nhập vào.
     let F = 0 , F1=1
     let fibonacci
-    for (let i=0; i<20;i++){
+    let n =prompt("nhập số lượng muốn in ra ")
+    for (let i=0; i<n;i++){
         fibonacci =F +F1
         F=F1;
         F1=fibonacci;
         document.write(fibonacci+"<br/>")
     }
-
 </script>
 </body>
 </html>

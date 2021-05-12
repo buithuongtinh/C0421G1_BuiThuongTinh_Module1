@@ -6,16 +6,19 @@
 </head>
 <body>
 <script>
-    // Hiển thị ra 20 số trong dãy fibonacci đầu tiên.
-    let F = 0 , F1=1
+    // tổng 20 số trong dãy fibonacci đầu tiên.
+
+    let F = 0 , F1=1 , tong=0;
     let fibonacci
     for (let i=0; i<20;i++){
         fibonacci =F +F1
         F=F1;
         F1=fibonacci;
+        tong =tong +F
         document.write(fibonacci+"<br/>")
-    }
 
+    }document.write("Tổng của dãy số = "+tong)
 </script>
+
 </body>
 </html>
