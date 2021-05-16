@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="text" id="tran" placeholder="nhập từ tiếng anh">
+    <button onclick="dich()" >dịch sang tiếng Việt</button>
+    <p id="reasult"></p>
+    <script>
+        function dich() {
+            a=document.getElementById("tran").value ;
+            let tienganh =["map","computer","music","data","software"];
+            let tiengviet =["bản đồ","máy tính","âm nhạc","dữ liệu ","phần mềm"]
+            for (let i=0;i< tienganh.length;i++){
+                if (a ===tienganh[i]){
+                    document.getElementById("reasult").innerText=tiengviet[i];
+                    break;
+                }else {
+                    document.getElementById("reasult").innerText="từ của bạn không có trong từ điển này";
+
+                }
+            }
+
+        }
+    </script>
+
+
+
+</body>
+</html>

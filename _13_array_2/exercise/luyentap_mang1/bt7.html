@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Bài 7- Viết chương trình khởi tạo/nhập vào một mảng số
+    // nguyên gồm 10 phần tử,nhập/tạo phần tử số nguyên V.
+    // Chương trình kiểm tra xem V có thuộc mảng đã cho không,
+    // nếu V thuộc mảng đã cho xoá V khỏi mảng (Bản chất việc xoá ở đây tức
+    // là dịch phần tử ở bên phải V sang vị trí của V,
+    // và gán 0 cho phần tử cuối cùng của mảng).
+    // array.splice(startIndex, deleteCount, items).
+    // startIndex: Vị trí bắt đầu để thay đổi mảng.
+    // deleteCount: tổng số phần tử muốn xóa.
+    // items: phần tử thêm vào mảng.
+    let mang = new Array(10);
+    for(let i = 0; i< mang.length; i++){
+        mang [i] = parseInt(prompt("input element at " + i + " :"));
+
+    }console.log(mang);
+    let v = parseInt(prompt("input V: "));
+    for (let i = 0; i < mang.length; i++) {
+        if (v === mang[i]) {
+            mang.splice(i,1);
+            break;
+        }
+    }mang.push(0)
+     console.log(mang);
+
+</script>
+
+</body>
+</html>

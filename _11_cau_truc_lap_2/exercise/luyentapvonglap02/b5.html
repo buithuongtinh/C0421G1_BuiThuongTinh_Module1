@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Bài 5: Viết chương trình tính lãi ngân hàng
+    // (lãi mẹ đẻ lại con) khi biết số tiền ban đầu,
+    // số tháng cho vay và lãi xuất hàng tháng.
+    /* vay: 120000000
+    thời hạn : 12 tháng (1 năm)
+    lãi xuất  :0,9% (1 năm)
+    tiền trả mỗi tháng = 10000000
+    lãi tháng đầu = vay * lãi xuất
+    lãi tháng thứ 2 = gốc còn lại * lãi xuất theo tháng
+    Tiền gốc trả mỗi tháng : 120.000.000 ÷ 12 tháng = 10.000.000 VNĐ
+    Tháng đầu tiên phải trả:
+    Tiền lãi = 120.000.000 x 0,9% = 1.080.000 VNĐ
+    Tháng thứ hai phải trả:
+    Tiền lãi = (120.000.000 – 10.000.000) × 0,9% = 990.000 VND
+    tương tự cho những tháng còn lại
+    */
+
+    let thang = 0;
+    let gocvay = 120000000;
+    let tienlai=0
+    let tonglai =0
+    do{
+        tienlai=(gocvay*0.9/100);
+        tonglai += tienlai;
+        gocvay-= 10000000
+        thang++;
+        document.write("Tiền lãi tháng  "+thang + "="+ tienlai +" VND "+"<br>");
+    }while (thang<12);
+    document.write("Tổng lãi = "+tonglai + " VND");
+
+
+
+</script>
+</body>
+</html>

@@ -8,18 +8,20 @@
 <script>
     // Tìm số đầu tiên trong dãy fibonacci chia hết cho 5.
 
-    let F = 0 , F1=1
+    let f = 0 , f1=1
     let fibonacci , chia5;
-    for (let i=0; i<20;i++){
-        fibonacci =F +F1
-        F=F1;
-        F1=fibonacci;
-        if (F%5===0){
-           chia5=F
+	let i=0;
+    while(i>=0){
+        fibonacci =f +f1
+        f=f1;
+        f1=fibonacci;
+		i++
+        if (f%5===0){
+           chia5=f
             break;
         }
 
-    } document.write("Sô chia hết cho 5 trong dãy là số "+ chia5)
+    } document.write("Số chia hết cho 5 trong dãy là số "+ chia5)
 </script>
 </body>
 </html>
