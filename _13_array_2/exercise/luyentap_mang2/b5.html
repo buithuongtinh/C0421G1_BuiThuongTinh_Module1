@@ -8,19 +8,32 @@
 <script>
     // Viết một chương trình nhập vào 2 chuỗi,
     // sau đó kiểm tra xem hai chuỗi có giống nhau hay không.
-    // Math.max() để tìm giá trị lớn nhất
-    // trong JavaScript, bạn có thể kiểm tra hai chuỗi cho các giá trị
-    // giống như số nguyên để bạn có thể làm điều này:
-    // "A" < "B"
-    // "A" === "B"
-    // "A" > "B"
-    let chuoi1 = prompt("nhập chuỗi 1 ");
-    let chuoi2 = prompt("nhập chuỗi 2 ");
-    if (chuoi2.toString()===chuoi1.toString()){
-        alert("hai chuỗi giống nhau");
+   
+	
+	
+  
+    let str1 = prompt("Nhap chuoi 1:");
+    let str2 = prompt("Nhap chuoi 2:");
+    let arrStr1 = str1.split("");
+    let arrStr2 = str2.split("");
+    let check = true;
+    if (arrStr1.length===arrStr2.length){
+        for (let i=0;i<arrStr1.length;i++) {
+          if ( arrStr1[i] != arrStr2[i] ){
+              check = false ;
+              break;
+          }
+        }
     }else {
-        alert("hai chuỗi khác nhau ");
+        check=false;
     }
+    if (check){
+        document.write("Hai chuoi giong nhau.");
+    }else {
+        document.write("Hai chuoi khac nhau");
+    }
+
+
 
 </script>
 </body>
