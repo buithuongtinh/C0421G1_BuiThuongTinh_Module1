@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Bài 8: Viết hàm truyền vào mảng số nguyên bất kỳ, sau đó đảo ngược mảng số nguyên đó.
+    let arr = new Array(5);
+    function daoNguoc() {
+    for(let i = 0; i< arr.length; i++){
+        arr[i] = parseInt(prompt("input element at " + i + " :"));
+    }document.write("arr =" +arr +"<br>");
+
+    }
+    daoNguoc();
+    document.write("đảo ngược thành "+arr.reverse());
+</script>
+
+</body>
+</html>

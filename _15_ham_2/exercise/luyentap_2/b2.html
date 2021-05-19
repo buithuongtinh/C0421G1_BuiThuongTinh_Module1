@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Viết hàm tính diện tích, hàm tính chu vi hình tròn. Gọi hàm vừa xây dựng được
+    yesNo();
+    function yesNo() {
+        let choose = parseInt(prompt("chọn 1  tính diện tích , chọn 2 tính chu vi  "));
+        if (choose === 1){
+            dientich();
+        }else if(choose === 2){
+            chuvi();
+        }else {
+            alert("bạn nhập sai");
+        }
+    }
+
+    function dientich() {
+        let pi = 3.14 ;
+        let r =parseInt(prompt("nhập bán kính hình tròn "));
+        let ketqua = r*r*pi ;
+        document.write("diện tích hình tròn là " + ketqua );
+    }
+    function chuvi() {
+        let pi2 = 3.141
+        let r2 =parseInt(prompt("nhập bán kính hình tròn "));
+        let ketqua2 = 2*r2*pi2 ;
+        document.write("chu vi hình tròn là " + ketqua2 );
+
+    }
+
+</script>
+
+</body>
+</html>
