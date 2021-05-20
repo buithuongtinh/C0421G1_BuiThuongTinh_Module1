@@ -8,13 +8,18 @@
 <script>
     // Viết hàm truyền vào 2 số nguyên bất kì, thực hiện đổi chỗ hai số nguyên đó.
 
-    let a = parseFloat(prompt("Nhập số bất kỳ"))
-    let b = parseFloat(prompt("Nhập số bất kỳ"))
-    function swapnumber(num1,num2) {
-        return num2+" ,"+num1 ;
+   
+    function swap(myArr) {
+        let temp = myArr[0];
+        myArr[0]= myArr[1];
+        myArr[1] = temp; 
     }
-    let result = swapnumber(a,b);
-    document.write(result);
+    let a = parseInt(prompt('input a:'));
+    let b = parseInt(prompt('input b:'));
+    let arr = [a,b];
+    document.write("Truoc khi swap: " + arr[0] + ';' + arr[1] + '<br>');
+    swap(arr);
+    document.write("Sau khi swap: " + arr[0] + ';' + arr[1] + '<br>');
 </script>
 </body>
 </html>

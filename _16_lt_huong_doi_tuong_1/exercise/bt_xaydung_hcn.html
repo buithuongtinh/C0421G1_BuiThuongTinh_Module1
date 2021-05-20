@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // let hinhChuNhat = function (dai , rong ) {
+    //     this.dai = dai ;
+    //     this.rong = rong;
+
+    //     this.dientich =function(){
+    //         return this.dai* this.rong ;
+    //     }
+    //     this.chuvi = function () {
+    //         return (this.dai + this.rong) *2 ;
+    //
+    //     }
+    //     this.cavas = function () {
+    //         return this.cavas();
+    //     }
+    // }
+    //
+    // let chieudai = parseInt(prompt(" nhập chiều dài "));
+    // let chieurong = parseInt(prompt("nhập chiều rộng "));
+
+    class Rectangle {
+        constructor(length, width) {
+
+            this.length = length;
+
+            this.width = width;
+
+        }
+
+        square(length,width) {
+            return this.length * this.width;
+        }
+
+        perimeter(length,width) {
+            return (this.length + this.width) * 2;
+        }
+    }
+
+
+    let lengthRec = parseInt(prompt("Length: "));
+    let widthRec = parseInt(prompt("Width: "));
+
+    let canvasContext = new Rectangle(lengthRec, widthRec);
+
+    let result1 = canvasContext.square(lengthRec, widthRec);
+    console.log("Diện tích: " + result1);
+
+    let result2 = canvasContext.perimeter(lengthRec, widthRec);
+    console.log("Chu vi: " + result2);
+
+    let canvasHTML = document.getElementById("myCanvas");
+    canvasContext = canvasHTML.getContext("2d");
+
+    canvasContext.rect(50, 50, lengthRec, widthRec);
+    canvasContext.stroke();
+
+</script>
+</body>
+</html>
