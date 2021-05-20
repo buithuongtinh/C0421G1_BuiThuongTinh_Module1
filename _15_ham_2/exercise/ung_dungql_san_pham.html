@@ -5,103 +5,74 @@
     <title>Title</title>
 </head>
 <body>
-<h3>Add new product</h3>
-<input type="text" id="newProduct">
-<button onclick="addNewProduct()">Add</button>
-​
-<!--<table border="1">-->
-<!--    <tr>-->
-<!--        <td>Product name</td>-->
-<!--        <td>Edit</td>-->
-<!--        <td>Delete</td>-->
-<!--    </tr>-->
-<!--    <tr>-->
-<!--        <td>Sony</td>-->
-<!--        <td><button>Edit</button></td>-->
-<!--        <td><button>Delete</button></td>-->
-<!--    </tr>-->
-<!--    <tr>-->
-<!--        <td>Samsung</td>-->
-<!--        <td><button>Edit</button></td>-->
-<!--        <td><button>Delete</button></td>-->
-<!--    </tr>-->
-<!--</table>-->
-​
+<<h1 style="text-align: center">Phone List</h1>
+<div style="text-align: center">
+    <h3>Add New Product</h3>
+    <input type="text" id="input" placeholder="New product">
+    <input type="button" value="Add" onclick="addItem()">
+    <h4>Display All Product</h4>
+</div>
 <div id="displayTable"></div>
 ​
 <script>
-    let listProduct = ["Sony Xperia", "Samsung galaxy", "Nokia 6", "Xiaomi", "Nhat"];
-​
-    function display() {
+    let phone = ["Sony Experia", "Nokia6", "Oppo A71", "Fujitsu F-04E", "Apple Iphone 8 Plus",
+        "Xiaomi Mi 5S Plus", "Apple Iphone 6S", "Xiaomi Redmi Note 4", "Samsung Galaxy"];
+
+    function displayItem(array) {
         let html =
-            "<table border=\"1\">\n" +
+            "<table border=\"1\" style='margin: 0px auto'>\n" +
             "    <tr>\n" +
+            "        <th>No</th>\n" +
             "        <th>Product name</th>\n" +
             "        <th>Edit</th>\n" +
             "        <th>Delete</th>\n" +
             "    </tr>\n";
-​
-        for (let i = 0; i < listProduct.length; i++) {
+
+        for (let i = 0; i < array.length; i++) {
             html = html +
                 "    <tr>\n" +
-                "        <td>" + listProduct[i] + "</td>\n" +
-                "        <td><button>Edit</button></td>\n" +
-                "        <td><button onclick='deleteProduct(" + i + ")'>Delete</button></td>\n" +
+                "        <td>" + (i+1) + "</td>\n" +
+                "        <td>" + array[i] + "</td>\n" +
+                "        <td><button onclick='editItem(" + i + ")'>Edit</button></td>\n" +
+                "        <td><button onclick='delItem(" + i + ")'>Delete</button></td>\n" +
                 "    </tr>\n";
         }
-​
+
         html = html +
             "</table>";
-​
+
         document.getElementById("displayTable").innerHTML = html;
     }
-​
-    display();
-​
-    function addNewProduct() {
-        let newProduct = document.getElementById("newProduct").value;
-        if (newProduct == "") {
-            alert("Please input product name");
+
+    function addItem() {
+        let newItem = document.getElementById("input").value;
+        if (newItem == "") {
+            alert("Please input product name:");
         } else {
-            listProduct.push(newProduct);
-            display();
-            alert("Add new product " + newProduct + " OK!");
-            document.getElementById("newProduct").value = "";
+            phone.push(newItem);
+            displayItem(phone);
+            document.getElementById("input").value = "";
         }
     }
-​
-    function deleteProduct(index){
-        if(confirm("Are you want delete product " + listProduct[index] + " ?")){
-            listProduct.splice(index,1);
-            display();
+
+    function editItem(index) {
+        let newName = prompt("Input new name: ");
+        if (newName == "") {
+            alert("Please input product name:");
+        } else {
+            phone[index] = newName;
+            displayItem(phone);
         }
     }
-​
-    // document.getElementById("displayTable").innerHTML = displayList(listProduct);
-    ​
-    ​
-    // function displayList(arr) {
-    //     let html =
-    //         "<table border=\"1\">\n" +
-    //         "    <tr>\n" +
-    //         "        <th>Product name</th>\n" +
-    //         "        <th>Edit</th>\n" +
-    //         "        <th>Delete</th>\n" +
-    //         "    </tr>\n";
-    //
-    //     for (let i = 0; i < arr.length; i++) {
-    //         html = html +
-    //             "    <tr>\n" +
-    //             "        <td>" + arr[i] + "</td>\n" +
-    //             "        <td><button>Edit</button></td>\n" +
-    //             "        <td><button>Delete</button></td>\n" +
-    //             "    </tr>\n";
-    //     }
-    //     html = html +
-    //         "</table>";
-    //
-    //     return html;
-    // }
+
+    function delItem(index) {
+        if(confirm("Do you really want to delete item " + phone[index] + " ?")){
+            phone.splice(index,1);
+            displayItem(phone);
+        }
+    }
+
+    displayItem(phone);
 </script>
 
 </body>
