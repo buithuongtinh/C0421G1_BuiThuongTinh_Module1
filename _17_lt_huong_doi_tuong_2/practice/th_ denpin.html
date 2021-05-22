@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    class Battery {
+        constructor(energy) {
+            this.energy = energy;
+        }
+
+        setEnergy(energy) {
+            this.energy = energy;
+        }
+
+        getEnergy() {
+            return this.energy;
+        }
+
+        decreaseEnergy() {
+            if (this.energy > 0) {
+                this.energy--;
+            }
+        }
+    }
+
+    class FlashLamp {
+        // constructor(status, battery) {
+        //     this.status = status;
+        //     this.battery = battery;
+        // }
+
+        constructor(battery) {
+            this.battery = battery;
+        }
+
+        setBattery() {
+            this.battery = battery;
+        }
+
+        getBatteryInfo() {
+            return this.battery.getEnergy();
+        }
+
+        getBattery(){
+            return this.battery;
+        }
+
+        light() {
+            if (this.status) {
+                alert("Lighting");
+            } else {
+                alert("Not lighting")
+            }
+        }
+
+        turnOn() {
+            if (this.battery.getEnergy() > 0) {
+                this.status = true;
+                this.battery.decreaseEnergy();
+                return true;
+            } else {
+                this.status = false;
+                return false;
+            }
+        }
+
+        turnOff() {
+            this.status = false;
+        }
+    }
+
+
+    let battery = new Battery(5);
+
+    let flashLamp = new FlashLamp(battery);
+    document.write("Moi lap pin: " + flashLamp.getBattery().getEnergy() + "</br>");
+    flashLamp.light();
+
+    flashLamp.turnOn();
+    flashLamp.light();
+    document.write("Pin sau bat den: " + flashLamp.getBatteryInfo() + "</br>");
+
+    flashLamp.turnOff();
+    flashLamp.light();
+    document.write("Pin sau tat den: " + flashLamp.getBatteryInfo() + "</br>");
+
+    if (flashLamp.turnOn() == false) {
+        alert("Het pin roi");
+    }
+    // flashLamp.turnOn();
+    // flashLamp.light();
+    // document.write("Pin sau bat den: " + flashLamp.getBatteryInfo() + "</br>");
+    //
+
+    // let battery2 = new Battery(10);
+    // flashLamp.setBattery(battery2);
+    //
+    // flashLamp.turnOn();
+    // flashLamp.light();
+    // document.write("Pin sau khi mua pin moi: " + flashLamp.getBatteryInfo() + "</br>");
+
+
+</script>
+
+</body>
+</html>
