@@ -5,62 +5,46 @@
     <title>Title</title>
 </head>
 <body>
+<canvas id="myCanvas" width="1000px" height="500px" ></canvas><br>
 <script>
-    // let hinhChuNhat = function (dai , rong ) {
-    //     this.dai = dai ;
-    //     this.rong = rong;
-
-    //     this.dientich =function(){
-    //         return this.dai* this.rong ;
-    //     }
-    //     this.chuvi = function () {
-    //         return (this.dai + this.rong) *2 ;
-    //
-    //     }
-    //     this.cavas = function () {
-    //         return this.cavas();
-    //     }
-    // }
-    //
-    // let chieudai = parseInt(prompt(" nhập chiều dài "));
-    // let chieurong = parseInt(prompt("nhập chiều rộng "));
-
+    // Viết một lớp các đối tượng hình chữ nhật lấy tên là Rectangle, mỗi hình chữ nhật đều có những đặc tính sau:
+    //     + Có thông số chiều dài (int).
+    //Có thông số chiều rộng (int)
+    //Có tính năng tính diện tích.
+    //Có tính năng tính chu vi.
+    //Có tính năng hiển thị trực quan hình chữ nhật bằng cách vẽ lên canvas
+    //Sử dụng lớp Rectangle vừa định nghĩa để viết một chương trình JavaScript  với kịch bản như sau:
+    // Khai báo và khởi tạo một đối tượng kiểu Rectangle.
+    // Hiển thị hình chữ nhật trên màn hình web
+    // Thay đổi chiều dài và chiều rộng của hình chữ nhật
+    // In ra màn hình diện tích và chu vi của hình chữ nhật đó.
     class Rectangle {
-        constructor(length, width) {
-
-            this.length = length;
-
+        constructor(width,height) {
             this.width = width;
-
+            this.height = height;
         }
-
-        square(length,width) {
-            return this.length * this.width;
+        getWidth(width){
+            return this.width;
         }
-
-        perimeter(length,width) {
-            return (this.length + this.width) * 2;
+        getHeight(height){
+            return this.height;
+        }
+        acreage (width,height){
+            return this.width * this.height;
+        }
+        area (width,height){
+            return (this.height+this.width) * 2;
+        }
+        drawRectangle(width,height){
+            return document.getElementById("myCanvas").getContext("2d");
         }
     }
-
-
-    let lengthRec = parseInt(prompt("Length: "));
-    let widthRec = parseInt(prompt("Width: "));
-
-    let canvasContext = new Rectangle(lengthRec, widthRec);
-
-    let result1 = canvasContext.square(lengthRec, widthRec);
-    console.log("Diện tích: " + result1);
-
-    let result2 = canvasContext.perimeter(lengthRec, widthRec);
-    console.log("Chu vi: " + result2);
-
-    let canvasHTML = document.getElementById("myCanvas");
-    canvasContext = canvasHTML.getContext("2d");
-
-    canvasContext.rect(50, 50, lengthRec, widthRec);
-    canvasContext.stroke();
-
+    let hcn = new Rectangle(50, 40);
+    document.write("Diện tích hình chữ nhật là: "+hcn.acreage()+"<br>");
+    document.write("Chu vi hình chữ nhất là : " + hcn.area());
+    let canvasHTML = hcn.drawRectangle(hcn.getWidth(),hcn.getHeight())
+    canvasHTML.fillStyle = "black";
+    canvasHTML.fillRect(200,200,hcn.getWidth(),hcn.getHeight());
 </script>
 </body>
 </html>
