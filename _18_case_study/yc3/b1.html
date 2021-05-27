@@ -6,7 +6,7 @@
 </head>
 <body>
 <script>
-    let n = parseInt(prompt("Nhập só element:"));
+    let n = parseInt(prompt("Nhập số element:"));
     let a = new Array(n);
     for (let i = 0; i < a.length; i++) {
         a[i] = parseInt(prompt("Nhập a[" + i + "]"));
@@ -24,7 +24,7 @@
             }
             b.push(s);
         }
-        document.write(b);
+        document.write("mảng b đc tạo ra là "+b);
     }
     prefixSums(a);
 
