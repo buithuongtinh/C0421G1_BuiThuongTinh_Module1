@@ -9,10 +9,17 @@
     // Cho xâu kí tự. Hãy đếm số lượng ký tự khác nhau trong xâu đó
     // Ví dụ: s = "cabca", thì kết quả differentSymbolsNaive(s) = 3.
     // Có 3 kí tự khác nhau là a, b và c.
-     let s = prompt("nhập một xâu ký tự ");
-     let differentSymbolsNaive = new Set(s);
-     console.log(differentSymbolsNaive);
-     console.log(differentSymbolsNaive.size)
+     function differentSymbolsNaive(str){
+         let  arr = [];
+         for (let i = 0; i < str.length;i++){
+             if (arr.indexOf(str.charAt(i))===-1){
+                 arr.push(str.charAt(i));
+             }
+         }
+         return arr.length;
+     }
+     let str = prompt("nhập một sâu ký tự  ");
+     alert("có " +differentSymbolsNaive(str)+" ký tự khác nhau" )
 
 </script>
 </body>

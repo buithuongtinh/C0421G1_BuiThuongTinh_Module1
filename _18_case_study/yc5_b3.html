@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Viết hàm tìm giá trị lớn nhất, nhỏ nhất trong mảng 2 chiều
+    let m = parseInt(prompt("nhập số dòng của ma trận "));
+    let n = parseInt(prompt("nhập số cột của ma trận "));
+    let matrix = [];
+    for (let i = 0; i <m ; i++){
+        let row =[]
+        for (let j = 0; j<n;j++){
+            row[j]= parseInt(prompt("nhập số vào ma trận "));
+        }matrix[i] = row;
+    }
+    function findMaxMin(matrix) {
+        let max = matrix[0][0];
+        let min = matrix[0][0];
+        for (let i = 0; i <matrix.length ; i++){
+            for (let j = 0; j<matrix[i].length;j++){
+                if(max< matrix[i][j]){
+                   max = matrix[i][j];
+                }
+                if(min> matrix[i][j]){
+                    min = matrix[i][j];
+                }
+            }
+        }
+        console.table(matrix);
+        alert("phần tử lớn nhất là "+max +
+            "\n phần tử bé nhất là " +min);
+    }
+findMaxMin(matrix);
+
+
+</script>
+</body>
+</html>
