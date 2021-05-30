@@ -6,17 +6,24 @@
 </head>
 <body>
 <script>
-    let a = new Array(4,20,5);
-    let b = new Array(2,3,4);
-    let tuSo = 0;
-    let phanSo = 0;
-    for (let i=0;i<a.length;i++){
-        if (a[i]>tuSo){
-            tuSo = a[i];
-            a[i] = b[i];
-            phanSo = a[i];
+    let numerators =[];
+    let denominators =[];
+    let sizes = parseInt(prompt("nhập vào độ dài mảng các phân số "));
+    for (let i = 0; i < sizes;i++){
+        numerators.push(parseInt(prompt("nhập vào tử số ")));
+        denominators.push(parseInt(prompt("nhập vào mẫu số ")));
+    }
+    function maxFaction(numerators,denominators) {
+        let maxIndex =0;
+        for (let i = 1; i < numerators.length;i++){
+            if (numerators[maxIndex] * denominators[i] < numerators[i] * denominators[maxIndex]){
+                maxIndex = i;
+            }
         }
-    }console.log(tuSo+"/"+phanSo);
+        return maxIndex
+    }
+    alert("chỉ số của phân số lớn nhất là "+ maxFaction(numerators,denominators));
+
 </script>
 
 </body>
